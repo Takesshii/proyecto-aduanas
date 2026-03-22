@@ -21,7 +21,7 @@
         body { font-family: var(--font-text); background-color: var(--blanco); color: #333; overflow-x: hidden; }
         h1, h2, h3, .navbar-brand { font-family: var(--font-titles); font-weight: 400; }
 
-        /* NAVBAR CON LOGO */
+        /* NAVBAR */
         .navbar {
             background-color: var(--azul-profundo) !important;
             padding: 10px 0;
@@ -40,32 +40,31 @@
         .nav-link { color: var(--blanco) !important; font-weight: 300; margin-left: 20px; text-transform: uppercase; font-size: 0.85rem; transition: 0.3s; }
         .nav-link:hover, .nav-link.active { color: var(--turquesa-glaciar) !important; }
 
-        /* CABECERA DE SECCIÓN CON IMAGEN DE FONDO */
+        /* CABECERA */
         .page-header {
             background: linear-gradient(rgba(0,32,63,0.7), rgba(0,32,63,0.7)), 
-                        url('https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&w=2070&auto=format&fit=crop');
+                        url('https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&q=80&w=2000');
             background-size: cover; background-position: center;
             color: white; padding: 80px 0; text-align: center; margin-bottom: 50px;
         }
 
-        /* ESTILOS ESPECÍFICOS DE PRODUCTO */
+        /* PRODUCTO */
         .product-img { 
             border-radius: 20px; 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15); 
             width: 100%; 
+            max-width: 550px;
             height: auto;
             transition: transform 0.3s ease;
         }
-        .product-img:hover { transform: scale(1.02); }
+        .product-img:hover { transform: scale(1.03); }
 
         .spec-card { 
             border-left: 5px solid var(--azul-profundo); 
             background: #f8f9fa; 
             padding: 25px; 
             border-radius: 0 15px 15px 0; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
         }
-        .spec-list i { color: var(--azul-profundo); width: 25px; text-align: center; margin-right: 10px; }
 
         /* FOOTER */
         footer { background: var(--azul-profundo); color: var(--blanco); padding: 40px 0; margin-top: 80px; font-size: 0.9rem; }
@@ -76,7 +75,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
         <a class="navbar-brand" href="index.html">
-            <img src="logo.png" alt="Logo Salmón Importaciones" class="nav-logo">
+            <img src="logo.png" alt="Logo" class="nav-logo">
             Australis Select
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -104,23 +103,23 @@
     <div class="row align-items-center g-5">
         
         <div class="col-md-6 text-center">
-            <img src="https://images.unsplash.com/photo-1599043513903-ed6401376797?q=80&w=2070&auto=format&fit=crop" class="product-img" alt="Filete de Salmón Fresh">
+            <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&q=80&w=1200" class="product-img" alt="Filete de Salmón Fresh">
         </div>
         
         <div class="col-md-6">
-            <h2 class="mb-4 section-title text-start" style="color: var(--azul-profundo);">Ficha Técnica (Trim D)</h2>
+            <h2 class="mb-4" style="color: var(--azul-profundo);">Ficha Técnica (Trim D)</h2>
             <div class="spec-card mb-4">
-                <ul class="list-unstyled spec-list mb-0">
-                    <li class="mb-3"><i class="fas fa-map-marker-alt"></i> <strong>Origen:</strong> Puerto Montt, Chile (AquaChile)</li>
-                    <li class="mb-3"><i class="fas fa-utensils"></i> <strong>Corte:</strong> Filete con piel, sin espinas, sin grasa abdominal</li>
-                    <li><i class="fas fa-certificate"></i> <strong>Certificación:</strong> ASC / BAP 4 Estrellas</li>
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-3"><i class="fas fa-map-marker-alt me-2 text-primary"></i> <strong>Origen:</strong> Puerto Montt, Chile (AquaChile)</li>
+                    <li class="mb-3"><i class="fas fa-utensils me-2 text-primary"></i> <strong>Corte:</strong> Filete con piel, sin espinas, sin grasa abdominal</li>
+                    <li><i class="fas fa-certificate me-2 text-primary"></i> <strong>Certificación:</strong> ASC / BAP 4 Estrellas</li>
                 </ul>
             </div>
             
-            <h3 class="h4 mt-5 mb-3" style="font-family: var(--font-text); font-weight: 600;">Investigación de No Afectación</h3>
+            <h3 class="h4 mt-5 mb-3" style="font-weight: 600;">Investigación de No Afectación</h3>
             <p class="small text-muted mb-3">Se determinó que la importación de esta especie no daña a las empresas mexicanas debido a:</p>
             <div class="p-3 bg-light rounded-3 border">
-                <p class="mb-0 small"><strong>Barrera Biológica:</strong> El salmón requiere aguas frías (<strong>8°C</strong>) inexistentes en las costas mexicanas, donde predominan especies de agua templada (Tilapia/Camarón).</p>
+                <p class="mb-0 small"><strong>Barrera Biológica:</strong> El salmón requiere aguas frías (<strong>8°C</strong>) inexistentes en las costas mexicanas, donde predominan especies de agua templada como la Tilapia o el Camarón.</p>
             </div>
         </div>
     </div>
