@@ -6,196 +6,75 @@
     <title>Australis Select México | Importación Premium de Salmón Chileno</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Poiret+One&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        /* --- VARIABLES DE DISEÑO --- */
         :root {
-            --azul-profundo: #00203f; /* Azul Marino Corporativo */
-            --turquesa-glaciar: #adefd1; /* Acento de Frescura */
-            --gris-suave: #f4f7f6;
+            --azul-profundo: #00203f;
+            --turquesa-glaciar: #adefd1;
             --blanco: #ffffff;
             --font-titles: 'Poiret One', cursive;
             --font-text: 'Montserrat', sans-serif;
         }
 
-        /* --- ESTILOS GENERALES --- */
-        body {
-            font-family: var(--font-text);
-            background-color: var(--blanco);
-            color: #333;
-            overflow-x: hidden;
-        }
+        body { font-family: var(--font-text); background-color: var(--blanco); color: #333; overflow-x: hidden; }
+        h1, h2, h3, .navbar-brand { font-family: var(--font-titles); font-weight: 400; }
 
-        h1, h2, h3, h4, .navbar-brand {
-            font-family: var(--font-titles);
-            font-weight: 400;
-            letter-spacing: 1px;
-        }
-
-        /* --- BARRA DE NAVEGACIÓN (NAVBAR) --- */
+        /* NAVBAR CON LOGO */
         .navbar {
-            background-color: rgba(0, 32, 63, 0.95) !important; /* Semi-transparente */
-            backdrop-filter: blur(5px); /* Efecto esmerilado */
-            padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background-color: rgba(0, 32, 63, 0.98) !important;
+            backdrop-filter: blur(10px);
+            padding: 10px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
+        .nav-logo { height: 50px; width: auto; margin-right: 15px; }
+        .navbar-brand { color: var(--turquesa-glaciar) !important; font-size: 1.5rem; text-transform: uppercase; display: flex; align-items: center; }
 
-        .navbar-brand {
-            color: var(--turquesa-glaciar) !important;
-            font-size: 1.8rem;
-            text-transform: uppercase;
-        }
+        .nav-link { color: var(--blanco) !important; font-weight: 300; margin-left: 20px; text-transform: uppercase; font-size: 0.85rem; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { color: var(--turquesa-glaciar) !important; }
 
-        .nav-link {
-            color: var(--blanco) !important;
-            font-weight: 300;
-            margin-left: 20px;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link:hover, .nav-link.active {
-            color: var(--turquesa-glaciar) !important;
-        }
-
-        /* --- SECCIÓN DE PORTADA (HERO) --- */
+        /* PORTADA (HERO) CON LOGO CENTRAL */
         .hero {
-            background: linear-gradient(rgba(0,32,63,0.5), rgba(0,32,63,0.8)), 
+            background: linear-gradient(rgba(0,32,63,0.6), rgba(0,32,63,0.85)), 
                         url('https://images.unsplash.com/photo-1599043513903-ed6401376797?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* Efecto Parallax */
-            height: 100vh; /* Altura completa de pantalla */
-            color: var(--blanco);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
+            background-size: cover; background-position: center; background-attachment: fixed;
+            height: 100vh; color: var(--blanco); display: flex; align-items: center; justify-content: center; text-align: center;
         }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 15vh;
-            background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+        .hero-logo { 
+            background: white; padding: 25px; border-radius: 50%; 
+            width: 180px; height: 180px; margin: 0 auto 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            display: flex; align-items: center; justify-content: center;
+            animation: fadeInDown 1.2s ease-out;
         }
+        .hero-logo img { width: 130px; height: auto; }
 
-        .hero-content h1 {
-            font-size: 4.5rem;
-            margin-bottom: 10px;
-            animation: fadeInDown 1s ease-out;
-        }
+        .hero-content h1 { font-size: 4rem; margin-bottom: 5px; animation: fadeInUp 1s ease-out; }
+        .hero-content p.lead { font-size: 1.4rem; color: var(--turquesa-glaciar); animation: fadeInUp 1.2s ease-out; }
 
-        .hero-content p.lead {
-            font-size: 1.5rem;
-            font-weight: 300;
-            color: var(--turquesa-glaciar);
-            animation: fadeInUp 1s ease-out 0.5s;
-            animation-fill-mode: both;
-        }
+        /* SECCIONES */
+        .section-title { color: var(--azul-profundo); text-align: center; margin-bottom: 60px; position: relative; padding-bottom: 15px; }
+        .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background-color: var(--turquesa-glaciar); }
 
-        .hero-content p.sub-lead {
-            font-size: 1rem;
-            font-weight: 300;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: 20px;
-            opacity: 0.8;
-        }
+        .info-card { background: #fcfcfc; border-radius: 20px; padding: 40px; box-shadow: 0 8px 25px rgba(0,0,0,0.05); height: 100%; border-bottom: 4px solid var(--azul-profundo); transition: 0.3s; }
+        .info-card:hover { transform: translateY(-8px); }
+        .icon-box { font-size: 2.5rem; color: var(--azul-profundo); margin-bottom: 20px; }
 
-        /* --- SECCIONES DE CONTENIDO --- */
-        .section-title {
-            color: var(--azul-profundo);
-            text-align: center;
-            margin-bottom: 60px;
-            position: relative;
-            padding-bottom: 15px;
-        }
+        footer { background: var(--azul-profundo); color: var(--blanco); padding: 40px 0; margin-top: 80px; font-size: 0.9rem; }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--turquesa-glaciar);
-        }
-
-        /* --- TARJETAS (CARDS) PROFESIONALES --- */
-        .info-card {
-            background-color: var(--blanco);
-            border: none;
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%;
-        }
-
-        .info-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
-
-        .icon-box {
-            font-size: 3rem;
-            color: var(--azul-profundo);
-            margin-bottom: 25px;
-        }
-
-        .blockquote-custom {
-            font-size: 1.25rem;
-            font-weight: 300;
-            line-height: 1.8;
-            color: #555;
-            border-left: 5px solid var(--turquesa-glaciar);
-            padding-left: 20px;
-            margin: 30px 0;
-        }
-
-        /* --- FOOTER (PIE DE PÁGINA) --- */
-        footer {
-            background-color: var(--azul-profundo);
-            color: var(--blanco);
-            padding: 40px 0;
-            margin-top: 100px;
-            font-size: 0.9rem;
-            font-weight: 300;
-        }
-
-        footer strong {
-            color: var(--turquesa-glaciar);
-        }
-
-        /* --- ANIMACIONES --- */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-40px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="index.html">Australis Select</a>
+        <a class="navbar-brand" href="index.html">
+            <img src="logo.png" alt="Logo" class="nav-logo">
+            Australis Select
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -212,68 +91,48 @@
 
 <header class="hero">
     <div class="container hero-content">
-        <h1 class="display-1">Australis Select México</h1>
+        <div class="hero-logo">
+            <img src="logo.png" alt="Australis Select Logo">
+        </div>
+        <h1 class="display-2">Australis Select México</h1>
         <p class="lead">Excelencia y Trazabilidad en Salmón Premium</p>
-        <p class="sub-lead">Importación Directa desde los Fiordos Chilenos | TLC México-Chile</p>
+        <hr class="my-4 mx-auto border-light opacity-25" style="width: 200px;">
+        <p class="small text-uppercase tracking-widest">Importación Directa | TLC México-Chile</p>
     </div>
 </header>
 
 <main class="container my-5 py-5">
-    
-    <div class="row mb-5 py-5">
-        <div class="col-12">
-            <h2 class="section-title">Nuestra Propuesta de Valor</h2>
+    <div class="row g-4">
+        <div class="col-md-7 pe-lg-5">
+            <h2 class="section-title text-start">Justificación del Proyecto</h2>
+            <p class="lead fw-light">Suministro estratégico para el sector HORECA nacional.</p>
+            <p><strong>Australis Select México</strong> surge de la necesidad de abastecer al mercado gourmet mexicano con Salmón del Atlántico de alta frescura. Aprovechando el **Tratado de Libre Comercio México-Chile**, nuestra empresa elimina los costos arancelarios (0%) para ofrecer un producto premium con precios competitivos, optimizando la cadena de suministro a través de logística aérea de última generación.</p>
+            
+            <div class="mt-4 p-4 border-start border-4 border-info bg-light">
+                <h5 class="font-titles">Nuestra Hipótesis</h5>
+                <p class="m-0 italic">"La integración de un canal de importación directa reduce la brecha de frescura en un 40% respecto a distribuidores tradicionales, garantizando un producto 'Grade A' en la mesa del consumidor final."</p>
+            </div>
         </div>
-        <div class="col-md-7 pe-md-5">
-            <h3 class="text-primary mb-3">Justificación Estratégica</h3>
-            <p class="lead fw-light">México representa un mercado en crecimiento para proteínas de alta calidad. Sin embargo, carece de las condiciones climáticas para la acuicultura de salmónidos a gran escala.</p>
-            <p><strong>Australis Select México</strong> capitaliza la relación bilateral establecida en el <strong>TLC México-Chile</strong> para importar filetes de Salmón del Atlántico frescos y certificados. Nuestra operación no solo cubre un nicho de mercado gourmet, sino que fortalece la cadena de frío nacional y fomenta empleos en logística especializada, sin generar competencia desleal para los productores acuícolas mexicanos (tilapia/trucha), quienes operan en segmentos de mercado distintos.</p>
-        </div>
-        <div class="col-md-5 mt-4 mt-md-0">
+        
+        <div class="col-md-5">
             <div class="info-card">
-                <div class="text-center icon-box">
-                    <i class="fas fa-microscope"></i>
-                </div>
-                <h4>Investigación & Hipótesis</h4>
-                <p>Basamos nuestra operación en la siguiente premisa técnica:</p>
-                <blockquote class="blockquote-custom">
-                    "La importación de salmón chileno bajo el amparo del TLC permite una reducción de costos del **15% al 20%** frente a competidores europeos, facilitando su penetración en el sector HORECA nacional de alta gama."
-                </blockquote>
+                <div class="icon-box text-center"><i class="fas fa-ship"></i></div>
+                <h4 class="text-center">Modelo de Negocio</h4>
+                <p class="small">Operamos como **Comercializadora Importadora Especializada**. Nuestro valor agregado reside en la gestión del riesgo cambiario, el despacho aduanero expedito y la logística 'last-mile' bajo temperatura controlada.</p>
+                <ul class="list-unstyled mt-3 small">
+                    <li><i class="fas fa-check text-success me-2"></i> Trámite Aduanal 0% Arancel</li>
+                    <li><i class="fas fa-check text-success me-2"></i> Inspección Sanitaria (SENASICA)</li>
+                    <li><i class="fas fa-check text-success me-2"></i> Distribución Prime</li>
+                </ul>
             </div>
         </div>
     </div>
-
-    <div class="row mt-5 pt-5 bg-light rounded-4 p-5">
-        <div class="col-md-4 text-center">
-            <div class="icon-box text-success">
-                <i class="fas fa-shield-alt"></i>
-            </div>
-            <h5>No Afectación</h5>
-            <p class="small text-muted">Confirmamos nula interferencia con la industria nacional acuícola.</p>
-        </div>
-        <div class="col-md-4 text-center">
-            <div class="icon-box text-info">
-                <i class="fas fa-chart-line"></i>
-            </div>
-            <h5>Desarrollo Económico</h5>
-            <p class="small text-muted">Impulso a la logística de frío y servicios portuarios mexicanos.</p>
-        </div>
-        <div class="col-md-4 text-center">
-            <div class="icon-box text-warning">
-                <i class="fas fa-certificate"></i>
-            </div>
-            <h5>Calidad Certificada</h5>
-            <p class="small text-muted">Suministro directo de plantas con certificaciones ASC y BAP.</p>
-        </div>
-    </div>
-
 </main>
 
 <footer>
     <div class="container text-center">
-        <p>Australis Select México S.A. de C.V.</p>
-        <p class="small m-0">Proyecto Escolar de Comercio Internacional y Aduanas | Facultad de Economía</p>
-        <p class="small mt-2 text-turquesa">Link del Proyecto: <strong><i class="fab fa-github"></i> tuusuario.github.io/proyecto-aduanas</strong></p>
+        <p class="mb-1 text-uppercase tracking-widest">Australis Select México S.A. de C.V.</p>
+        <p class="small opacity-50">Proyecto Académico de Comercio Internacional | 2026</p>
     </div>
 </footer>
 
