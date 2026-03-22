@@ -28,7 +28,15 @@
             padding: 10px 0;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
-        .nav-logo { height: 50px; width: auto; margin-right: 15px; }
+        /* Ajuste para que el logo azul se vea sobre fondo oscuro */
+        .nav-logo { 
+            height: 45px; 
+            width: auto; 
+            margin-right: 12px; 
+            background: white; 
+            padding: 3px; 
+            border-radius: 5px; 
+        }
         .navbar-brand { color: var(--turquesa-glaciar) !important; font-size: 1.5rem; text-transform: uppercase; display: flex; align-items: center; }
 
         .nav-link { color: var(--blanco) !important; font-weight: 300; margin-left: 20px; text-transform: uppercase; font-size: 0.85rem; transition: 0.3s; }
@@ -42,13 +50,19 @@
             height: 100vh; color: var(--blanco); display: flex; align-items: center; justify-content: center; text-align: center;
         }
         .hero-logo { 
-            background: white; padding: 25px; border-radius: 50%; 
-            width: 180px; height: 180px; margin: 0 auto 30px;
+            background: white; 
+            padding: 15px; 
+            border-radius: 50%; 
+            width: 180px; 
+            height: 180px; 
+            margin: 0 auto 30px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            display: flex; align-items: center; justify-content: center;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
             animation: fadeInDown 1.2s ease-out;
         }
-        .hero-logo img { width: 130px; height: auto; }
+        .hero-logo img { width: 140px; height: auto; object-fit: contain; }
 
         .hero-content h1 { font-size: 4rem; margin-bottom: 5px; animation: fadeInUp 1s ease-out; }
         .hero-content p.lead { font-size: 1.4rem; color: var(--turquesa-glaciar); animation: fadeInUp 1.2s ease-out; }
@@ -72,7 +86,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
         <a class="navbar-brand" href="index.html">
-            <img src="logo.png" alt="Logo" class="nav-logo">
+            <img src="logo.png" alt="Logo Salmón Importaciones" class="nav-logo">
             Australis Select
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -92,7 +106,7 @@
 <header class="hero">
     <div class="container hero-content">
         <div class="hero-logo">
-            <img src="logo.png" alt="Australis Select Logo">
+            <img src="logo.png" alt="Salmón Importaciones Logo Principal">
         </div>
         <h1 class="display-2">Australis Select México</h1>
         <p class="lead">Excelencia y Trazabilidad en Salmón Premium</p>
@@ -106,7 +120,7 @@
         <div class="col-md-7 pe-lg-5">
             <h2 class="section-title text-start">Justificación del Proyecto</h2>
             <p class="lead fw-light">Suministro estratégico para el sector HORECA nacional.</p>
-            <p><strong>Australis Select México</strong> surge de la necesidad de abastecer al mercado gourmet mexicano con Salmón del Atlántico de alta frescura. Aprovechando el **Tratado de Libre Comercio México-Chile**, nuestra empresa elimina los costos arancelarios (0%) para ofrecer un producto premium con precios competitivos, optimizando la cadena de suministro a través de logística aérea de última generación.</p>
+            <p><strong>Australis Select México</strong> surge de la necesidad de abastecer al mercado gourmet mexicano con Salmón del Atlántico de alta frescura. Aprovechando el <strong>Tratado de Libre Comercio México-Chile</strong>, nuestra empresa elimina los costos arancelarios (0%) para ofrecer un producto premium con precios competitivos, optimizando la cadena de suministro a través de logística aérea de última generación.</p>
             
             <div class="mt-4 p-4 border-start border-4 border-info bg-light">
                 <h5 class="font-titles">Nuestra Hipótesis</h5>
@@ -118,7 +132,7 @@
             <div class="info-card">
                 <div class="icon-box text-center"><i class="fas fa-ship"></i></div>
                 <h4 class="text-center">Modelo de Negocio</h4>
-                <p class="small">Operamos como **Comercializadora Importadora Especializada**. Nuestro valor agregado reside en la gestión del riesgo cambiario, el despacho aduanero expedito y la logística 'last-mile' bajo temperatura controlada.</p>
+                <p class="small">Operamos como <strong>Comercializadora Importadora Especializada</strong>. Nuestro valor agregado reside en la gestión del riesgo cambiario, el despacho aduanero expedito y la logística 'last-mile' bajo temperatura controlada.</p>
                 <ul class="list-unstyled mt-3 small">
                     <li><i class="fas fa-check text-success me-2"></i> Trámite Aduanal 0% Arancel</li>
                     <li><i class="fas fa-check text-success me-2"></i> Inspección Sanitaria (SENASICA)</li>
