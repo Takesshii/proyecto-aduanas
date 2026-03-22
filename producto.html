@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Producto e Investigación | Australis Select México</title>
+    <title>Nuestro Producto | Australis Select México</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Poiret+One&display=swap" rel="stylesheet">
@@ -13,52 +13,40 @@
         :root {
             --azul-profundo: #00203f;
             --turquesa-glaciar: #adefd1;
-            --gris-fondo: #f8f9fa;
             --blanco: #ffffff;
             --font-titles: 'Poiret One', cursive;
             --font-text: 'Montserrat', sans-serif;
         }
 
         body { font-family: var(--font-text); background-color: var(--blanco); color: #333; }
-        h1, h2, h3, .navbar-brand { font-family: var(--font-titles); }
+        h1, h2, h3, .navbar-brand { font-family: var(--font-titles); font-weight: 400; }
 
-        /* Navbar Identica a Index */
-        .navbar { background-color: rgba(0, 32, 63, 0.95) !important; backdrop-filter: blur(5px); padding: 15px 0; }
-        .navbar-brand { color: var(--turquesa-glaciar) !important; text-transform: uppercase; }
-        .nav-link { color: var(--blanco) !important; font-weight: 300; margin-left: 20px; text-transform: uppercase; font-size: 0.9rem; transition: 0.3s; }
+        .navbar { background-color: var(--azul-profundo) !important; padding: 10px 0; }
+        .nav-logo { height: 45px; width: auto; margin-right: 12px; background: white; padding: 3px; border-radius: 5px; }
+        .navbar-brand { color: var(--turquesa-glaciar) !important; font-size: 1.5rem; text-transform: uppercase; display: flex; align-items: center; }
+        .nav-link { color: var(--blanco) !important; text-transform: uppercase; font-size: 0.85rem; margin-left: 20px; }
         .nav-link:hover, .nav-link.active { color: var(--turquesa-glaciar) !important; }
 
-        /* Header de Sección Corto */
         .page-header {
-            background: linear-gradient(rgba(0,32,63,0.8), rgba(0,32,63,0.8)), 
-                        url('https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&w=2070');
+            background: linear-gradient(rgba(0,32,63,0.7), rgba(0,32,63,0.7)), url('https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&w=2070&auto=format&fit=crop');
             background-size: cover; background-position: center;
-            padding: 80px 0; color: white; text-align: center;
+            color: white; padding: 80px 0; text-align: center;
         }
 
-        /* Tarjetas de Producto */
-        .spec-card {
-            border: none; border-radius: 15px; background: var(--gris-fondo);
-            padding: 30px; height: 100%; transition: 0.3s;
-        }
-        .spec-card:hover { background: var(--blanco); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .spec-icon { font-size: 2.5rem; color: var(--azul-profundo); margin-bottom: 20px; }
-
-        /* Sección de Investigación (Contraste) */
-        .investigation-box {
-            background-color: var(--azul-profundo); color: white;
-            border-radius: 20px; padding: 50px; margin-top: 50px;
-        }
-        .highlight-text { color: var(--turquesa-glaciar); font-weight: 600; }
-
-        footer { background-color: var(--azul-profundo); color: var(--blanco); padding: 40px 0; margin-top: 80px; font-size: 0.9rem; }
+        .product-img { border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); width: 100%; transition: 0.3s; }
+        .spec-card { border-left: 5px solid var(--azul-profundo); background: #f8f9fa; padding: 25px; border-radius: 0 15px 15px 0; }
+        
+        footer { background: var(--azul-profundo); color: var(--blanco); padding: 40px 0; margin-top: 80px; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="index.html">Australis Select</a>
+        <a class="navbar-brand" href="index.html">
+            <img src="logo.png" alt="Logo" class="nav-logo">
+            Australis Select
+        </a>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
@@ -72,51 +60,30 @@
 
 <header class="page-header">
     <div class="container">
-        <h1 class="display-4">Análisis del Producto</h1>
-        <p class="lead">Salmo Salar: Calidad de Exportación Certificada</p>
+        <h1 class="display-4">Salmón del Atlántico Premium</h1>
+        <p class="lead">Calidad Superior desde los Fiordos Chilenos</p>
     </div>
 </header>
 
-<main class="container my-5 py-4">
-    <div class="row align-items-center mb-5">
-        <div class="col-lg-6">
-            <h2 class="mb-4">Ficha Técnica: Trim D Premium</h2>
-            <p>Nuestro salmón es procesado bajo los más altos estándares de higiene en Puerto Montt, Chile. El formato <strong>Trim D</strong> asegura un producto listo para el consumo de alta gama, optimizando el rendimiento para el chef mexicano.</p>
-            <div class="row g-3 mt-3">
-                <div class="col-md-6">
-                    <div class="spec-card text-center">
-                        <i class="fas fa-map-marker-alt spec-icon"></i>
-                        <h6>Origen Único</h6>
-                        <p class="small m-0">Región de Los Lagos, Chile (Aguas Subantárticas).</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="spec-card text-center">
-                        <i class="fas fa-fish spec-icon"></i>
-                        <h6>Corte Trim D</h6>
-                        <p class="small m-0">Sin espinas, sin grasa abdominal, con piel escamada.</p>
-                    </div>
-                </div>
-            </div>
+<main class="container my-5">
+    <div class="row align-items-center g-5">
+        <div class="col-md-6">
+            <img src="https://images.unsplash.com/photo-1599043513903-ed6401376797?q=80&w=2070&auto=format&fit=crop" class="product-img" alt="Filete de Salmón">
         </div>
-        <div class="col-lg-6 mt-4 mt-lg-0">
-            <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=1974" class="img-fluid rounded-4 shadow" alt="Salmon Plato">
-        </div>
-    </div>
-
-    <div class="investigation-box shadow-lg">
-        <div class="row">
-            <div class="col-md-12 text-center mb-4">
-                <h3>Investigación de No Afectación Nacional</h3>
-                <hr class="mx-auto border-light" style="width: 60px;">
+        <div class="col-md-6">
+            <h2 class="mb-4">Ficha Técnica (Trim D)</h2>
+            <div class="spec-card mb-4">
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><strong><i class="fas fa-map-marker-alt me-2"></i> Origen:</strong> Puerto Montt, Chile (AquaChile)</li>
+                    <li class="mb-2"><strong><i class="fas fa-utensils me-2"></i> Corte:</strong> Filete con piel, sin espinas, sin grasa abdominal</li>
+                    <li><strong><i class="fas fa-certificate me-2"></i> Certificación:</strong> ASC / BAP 4 Estrellas</li>
+                </ul>
             </div>
-            <div class="col-md-6">
-                <h5><i class="fas fa-check-circle highlight-text me-2"></i>Diferenciación de Especie</h5>
-                <p class="fw-light">México concentra su acuicultura en <strong>Tilapia y Trucha de río</strong>. El Salmón Atlántico es una especie de mar frío que no se produce en territorio mexicano, eliminando cualquier conflicto de sustitución directa.</p>
-            </div>
-            <div class="col-md-6">
-                <h5><i class="fas fa-check-circle highlight-text me-2"></i>Segmentación del Mercado</h5>
-                <p class="fw-light">Nuestro producto se posiciona en el <span class="highlight-text">Sector Premium</span>. Los precios de venta (+$400 MXN/kg) no compiten con la canasta básica de pescado blanco nacional, atendiendo a un perfil de consumidor distinto.</p>
+            
+            <h3 class="h4 mt-5">Investigación de No Afectación</h3>
+            <p class="small text-muted">La importación de esta especie no daña a las empresas mexicanas debido a:</p>
+            <div class="p-3 bg-light rounded">
+                <p class="mb-0"><strong>Barrera Biológica:</strong> El salmón requiere aguas frías (8°C) inexistentes en las costas mexicanas, donde predominan especies de agua templada.</p>
             </div>
         </div>
     </div>
@@ -124,8 +91,8 @@
 
 <footer>
     <div class="container text-center">
-        <p>Australis Select México S.A. de C.V.</p>
-        <p class="small m-0 opacity-75">Investigación Técnica de Producto para Comercio Internacional</p>
+        <p class="mb-1 text-uppercase tracking-widest">Australis Select México S.A. de C.V.</p>
+        <p class="small opacity-50">Proyecto Académico de Comercio Internacional | 2026</p>
     </div>
 </footer>
 
