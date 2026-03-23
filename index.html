@@ -27,8 +27,8 @@
             padding: 12px 0;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
-        .nav-logo { 
-            height: 45px; 
+        .nav-logo-top { 
+            height: 40px; 
             width: auto; 
             margin-right: 12px; 
             background: white; 
@@ -39,15 +39,39 @@
         .nav-link { color: var(--blanco) !important; font-weight: 300; margin-left: 20px; text-transform: uppercase; font-size: 0.85rem; }
         .nav-link:hover, .nav-link.active { color: var(--turquesa-glaciar) !important; }
 
-        /* HERO SECTION */
+        /* HERO SECTION CORREGIDA */
         .hero {
-            background: linear-gradient(rgba(0,32,63,0.6), rgba(0,32,63,0.6)), 
-                        url('https://images.unsplash.com/photo-1559715544-33be62554de3?q=80&w=2000&auto=format&fit=crop');
-            background-size: cover; background-position: center;
-            height: 80vh; color: white; display: flex; align-items: center; justify-content: center; text-align: center;
+            background: linear-gradient(rgba(0,32,63,0.7), rgba(0,32,63,0.7)), 
+                        url('https://images.unsplash.com/photo-1551244072-5d12893278ab?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover; 
+            background-position: center;
+            height: 90vh; 
+            color: white; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center;
         }
-        .hero-content h1 { font-size: 4.5rem; letter-spacing: 5px; margin-bottom: 1rem; }
-        .hero-content p { font-size: 1.2rem; font-weight: 300; letter-spacing: 2px; color: var(--turquesa-glaciar); }
+        
+        /* LOGO CENTRAL CIRCULAR */
+        .central-logo-container {
+            background: white;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .central-logo-container img {
+            width: 120px;
+            height: auto;
+        }
+
+        .hero-content h1 { font-size: 4rem; letter-spacing: 4px; margin-bottom: 0.5rem; }
+        .hero-content p { font-size: 1.3rem; font-weight: 300; color: var(--turquesa-glaciar); margin-bottom: 2rem; }
 
         /* BUSINESS MODEL CARD */
         .model-card {
@@ -56,11 +80,12 @@
             padding: 50px;
             box-shadow: 0 20px 50px rgba(0,32,63,0.1);
             border-bottom: 8px solid var(--azul-profundo);
-            transition: transform 0.3s ease;
+            margin-top: -100px; /* Eleva la tarjeta sobre el hero */
+            position: relative;
+            z-index: 10;
         }
-        .model-card:hover { transform: translateY(-5px); }
         .model-icon { font-size: 3.5rem; color: var(--azul-profundo); margin-bottom: 25px; }
-        .check-list li { margin-bottom: 12px; font-size: 0.95rem; }
+        .check-list li { margin-bottom: 12px; font-size: 1rem; }
         .check-list i { color: #28a745; margin-right: 10px; }
 
         /* FOOTER */
@@ -72,7 +97,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
         <a class="navbar-brand" href="index.html">
-            <img src="logo.png" alt="Logo" class="nav-logo">
+            <img src="logo.png" alt="Logo" class="nav-logo-top">
             Australis Select
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -91,16 +116,19 @@
 
 <header class="hero">
     <div class="container hero-content">
-        <h1 class="display-1">Australis Select México</h1>
+        <div class="central-logo-container">
+            <img src="logo.png" alt="Australis Select Logo">
+        </div>
+        <h1 class="display-3">Australis Select México</h1>
         <p class="text-uppercase">Excelencia y Trazabilidad en Salmón Premium</p>
-        <hr class="w-25 mx-auto bg-light my-4">
-        <small class="opacity-75 tracking-widest">IMPORTACIÓN DIRECTA DESDE LOS FIORDOS CHILENOS | TLC MÉXICO-CHILE</small>
+        <div class="mx-auto" style="width: 60px; height: 2px; background: var(--turquesa-glaciar); margin-bottom: 20px;"></div>
+        <small class="opacity-75 tracking-widest d-block">IMPORTACIÓN DIRECTA | TLC MÉXICO-CHILE</small>
     </div>
 </header>
 
-<section class="container my-5 py-5">
+<section class="container mb-5 pb-5">
     <div class="row justify-content-center">
-        <div class="col-lg-6 col-md-8">
+        <div class="col-lg-7 col-md-10">
             <div class="model-card text-center">
                 <div class="model-icon">
                     <i class="fas fa-ship"></i>
