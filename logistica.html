@@ -18,13 +18,14 @@
             --font-text: 'Montserrat', sans-serif;
         }
 
-        body { font-family: var(--font-text); background-color: var(--blanco); color: #333; }
+        body { font-family: var(--font-text); background-color: #f4f7f6; color: #333; overflow-x: hidden; }
         h1, h2, h3, .navbar-brand { font-family: var(--font-titles); font-weight: 400; }
 
         /* NAVBAR */
         .navbar {
             background-color: var(--azul-profundo) !important;
             padding: 10px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
         .nav-logo { 
             height: 45px; 
@@ -38,27 +39,29 @@
         .nav-link { color: var(--blanco) !important; font-weight: 300; margin-left: 20px; text-transform: uppercase; font-size: 0.85rem; }
         .nav-link:hover, .nav-link.active { color: var(--turquesa-glaciar) !important; }
 
-        /* CABECERA DE SECCIÓN */
+        /* HEADER */
         .page-header {
-            background: linear-gradient(rgba(0,32,63,0.8), rgba(0,32,63,0.8)), url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=2070&auto=format&fit=crop');
+            background: linear-gradient(rgba(0,32,63,0.8), rgba(0,32,63,0.8)), 
+                        url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084&auto=format&fit=crop');
             background-size: cover; background-position: center;
-            color: white; padding: 80px 0; text-align: center; margin-bottom: 50px;
+            color: white; padding: 100px 0; text-align: center;
         }
 
-        /* TABLAS Y TARJETAS */
-        .table-container { background: white; border-radius: 15px; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .table thead { background-color: var(--azul-profundo); color: white; }
-        
-        .badge-custom { background-color: var(--turquesa-glaciar); color: var(--azul-profundo); font-weight: 600; padding: 10px 20px; border-radius: 50px; }
-
-        /* BARRA INFERIOR (FOOTER) */
-        footer { 
-            background: var(--azul-profundo); 
-            color: var(--blanco); 
-            padding: 40px 0; 
-            margin-top: 80px; 
-            font-size: 0.9rem; 
+        /* CARDS LOGÍSTICA */
+        .info-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--azul-profundo);
+            transition: transform 0.3s ease;
         }
+        .info-card:hover { transform: translateY(-10px); }
+        .icon-header { font-size: 2.5rem; color: var(--azul-profundo); margin-bottom: 20px; }
+
+        /* FOOTER */
+        footer { background: var(--azul-profundo); color: var(--blanco); padding: 40px 0; font-size: 0.9rem; margin-top: 80px; }
     </style>
 </head>
 <body>
@@ -85,66 +88,30 @@
 
 <header class="page-header">
     <div class="container">
-        <h1 class="display-4">Ruta Logística y Aranceles</h1>
+        <h1 class="display-4">Ruta Logística</h1>
         <p class="lead">Optimización de cadena de frío y beneficios del TLC México-Chile</p>
     </div>
 </header>
 
-<main class="container">
+<main class="container my-5 py-5">
     <div class="row g-4">
-        <div class="col-lg-12">
-            <div class="table-container">
-                <h3 class="mb-4 text-center">Detalle de Costos y Clasificación</h3>
-                <div class="table-responsive">
-                    <table class="table table-hover align-middle">
-                        <thead>
-                            <tr>
-                                <th>Concepto</th>
-                                <th>Detalle</th>
-                                <th>Costo Est. (USD/kg)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Fracción Arancelaria</td>
-                                <td>0302.14.01</td>
-                                <td>N/A</td>
-                            </tr>
-                            <tr>
-                                <td>Arancel (TLC México-Chile)</td>
-                                <td><strong>Exento (0%)</strong></td>
-                                <td>$0.00</td>
-                            </tr>
-                            <tr>
-                                <td>Transporte (Aéreo)</td>
-                                <td>SCL -> AICM</td>
-                                <td>$2.20</td>
-                            </tr>
-                            <tr>
-                                <td>Logística Terrestre</td>
-                                <td>Puerto Montt -> Santiago</td>
-                                <td>$0.80</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="mt-4 p-3 bg-light border-start border-4 border-primary">
-                    <p class="mb-0 small"><i class="fas fa-info-circle me-2"></i><strong>Nota importante:</strong> Se requiere presentar el <strong>Certificado de Origen</strong> vigente para aplicar la tasa preferencial del 0%.</p>
-                </div>
+        <div class="col-md-6">
+            <div class="info-card">
+                <div class="icon-header"><i class="fas fa-plane-departure"></i></div>
+                <h3>Cadena de Suministro</h3>
+                <p class="text-muted">
+                    Nuestra ruta inicia en las aguas frías de <strong>Puerto Montt, Chile</strong>, donde el producto es procesado y enviado vía terrestre a Santiago para su exportación aérea inmediata al AICM.
+                </p>
             </div>
         </div>
 
-        <div class="col-md-6 mt-5">
-            <div class="p-4 bg-light rounded-4 h-100">
-                <h4 class="font-titles mb-3"><i class="fas fa-plane-departure me-2"></i>Cadena de Suministro</h4>
-                <p>Nuestra ruta inicia en las aguas frías de <strong>Puerto Montt, Chile</strong>, donde el producto es procesado y enviado vía terrestre a Santiago para su exportación aérea inmediata al AICM.</p>
-            </div>
-        </div>
-        
-        <div class="col-md-6 mt-5">
-            <div class="p-4 bg-light rounded-4 h-100">
-                <h4 class="font-titles mb-3"><i class="fas fa-shiver me-2"></i>Control de Temperatura</h4>
-                <p>Mantenemos una cadena de frío estricta de <strong>0°C a 2°C</strong> mediante el uso de empaques térmicos especializados y geles refrigerantes de alta duración para garantizar la calidad Sushi-Grade.</p>
+        <div class="col-md-6">
+            <div class="info-card">
+                <div class="icon-header"><i class="fas fa-thermometer-half"></i></div>
+                <h3>Control de Temperatura</h3>
+                <p class="text-muted">
+                    Mantenemos una cadena de frío estricta de <strong>0°C a 2°C</strong> mediante el uso de empaques térmicos especializados y geles refrigerantes de alta duración para garantizar la calidad Sushi-Grade.
+                </p>
             </div>
         </div>
     </div>
