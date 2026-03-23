@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Australis Select México | Importación Premium de Salmón Chileno</title>
+    <title>Australis Select México | Importación de Salmón Premium</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Poiret+One&display=swap" rel="stylesheet">
@@ -21,14 +21,12 @@
         body { font-family: var(--font-text); background-color: var(--blanco); color: #333; overflow-x: hidden; }
         h1, h2, h3, .navbar-brand { font-family: var(--font-titles); font-weight: 400; }
 
-        /* NAVBAR CON LOGO */
+        /* NAVBAR */
         .navbar {
-            background-color: rgba(0, 32, 63, 0.98) !important;
-            backdrop-filter: blur(10px);
-            padding: 10px 0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            background-color: var(--azul-profundo) !important;
+            padding: 12px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
-        /* Ajuste para que el logo azul se vea sobre fondo oscuro */
         .nav-logo { 
             height: 45px; 
             width: auto; 
@@ -37,48 +35,36 @@
             padding: 3px; 
             border-radius: 5px; 
         }
-        .navbar-brand { color: var(--turquesa-glaciar) !important; font-size: 1.5rem; text-transform: uppercase; display: flex; align-items: center; }
-
-        .nav-link { color: var(--blanco) !important; font-weight: 300; margin-left: 20px; text-transform: uppercase; font-size: 0.85rem; transition: 0.3s; }
+        .navbar-brand { color: var(--turquesa-glaciar) !important; font-size: 1.6rem; text-transform: uppercase; display: flex; align-items: center; }
+        .nav-link { color: var(--blanco) !important; font-weight: 300; margin-left: 20px; text-transform: uppercase; font-size: 0.85rem; }
         .nav-link:hover, .nav-link.active { color: var(--turquesa-glaciar) !important; }
 
-        /* PORTADA (HERO) CON LOGO CENTRAL */
+        /* HERO SECTION */
         .hero {
-            background: linear-gradient(rgba(0,32,63,0.6), rgba(0,32,63,0.85)), 
-                        url('https://images.unsplash.com/photo-1599043513903-ed6401376797?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover; background-position: center; background-attachment: fixed;
-            height: 100vh; color: var(--blanco); display: flex; align-items: center; justify-content: center; text-align: center;
+            background: linear-gradient(rgba(0,32,63,0.6), rgba(0,32,63,0.6)), 
+                        url('https://images.unsplash.com/photo-1559715544-33be62554de3?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover; background-position: center;
+            height: 80vh; color: white; display: flex; align-items: center; justify-content: center; text-align: center;
         }
-        .hero-logo { 
-            background: white; 
-            padding: 15px; 
-            border-radius: 50%; 
-            width: 230px; 
-            height: 230px; 
-            margin: 0 auto 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            display: flex; 
-            align-items: center; 
-            justify-content: center;
-            animation: fadeInDown 1.2s ease-out;
+        .hero-content h1 { font-size: 4.5rem; letter-spacing: 5px; margin-bottom: 1rem; }
+        .hero-content p { font-size: 1.2rem; font-weight: 300; letter-spacing: 2px; color: var(--turquesa-glaciar); }
+
+        /* BUSINESS MODEL CARD */
+        .model-card {
+            background: white;
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 20px 50px rgba(0,32,63,0.1);
+            border-bottom: 8px solid var(--azul-profundo);
+            transition: transform 0.3s ease;
         }
-        .hero-logo img { width: 140px; height: auto; object-fit: contain; }
+        .model-card:hover { transform: translateY(-5px); }
+        .model-icon { font-size: 3.5rem; color: var(--azul-profundo); margin-bottom: 25px; }
+        .check-list li { margin-bottom: 12px; font-size: 0.95rem; }
+        .check-list i { color: #28a745; margin-right: 10px; }
 
-        .hero-content h1 { font-size: 4rem; margin-bottom: 5px; animation: fadeInUp 1s ease-out; }
-        .hero-content p.lead { font-size: 1.4rem; color: var(--turquesa-glaciar); animation: fadeInUp 1.2s ease-out; }
-
-        /* SECCIONES */
-        .section-title { color: var(--azul-profundo); text-align: center; margin-bottom: 60px; position: relative; padding-bottom: 15px; }
-        .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 3px; background-color: var(--turquesa-glaciar); }
-
-        .info-card { background: #fcfcfc; border-radius: 20px; padding: 40px; box-shadow: 0 8px 25px rgba(0,0,0,0.05); height: 100%; border-bottom: 4px solid var(--azul-profundo); transition: 0.3s; }
-        .info-card:hover { transform: translateY(-8px); }
-        .icon-box { font-size: 2.5rem; color: var(--azul-profundo); margin-bottom: 20px; }
-
-        footer { background: var(--azul-profundo); color: var(--blanco); padding: 40px 0; margin-top: 80px; font-size: 0.9rem; }
-
-        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-40px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        /* FOOTER */
+        footer { background: var(--azul-profundo); color: var(--blanco); padding: 40px 0; font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -86,7 +72,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
         <a class="navbar-brand" href="index.html">
-            <img src="logo.png" alt="Logo Salmón Importaciones" class="nav-logo">
+            <img src="logo.png" alt="Logo" class="nav-logo">
             Australis Select
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -105,43 +91,35 @@
 
 <header class="hero">
     <div class="container hero-content">
-        <div class="hero-logo">
-            <img src="logo.png" alt="Salmón Importaciones Logo Principal">
-        </div>
-        <h1 class="display-2">Australis Select México</h1>
-        <p class="lead">Excelencia y Trazabilidad en Salmón Premium</p>
-        <hr class="my-4 mx-auto border-light opacity-25" style="width: 200px;">
-        <p class="small text-uppercase tracking-widest">Importación Directa | TLC México-Chile</p>
+        <h1 class="display-1">Australis Select México</h1>
+        <p class="text-uppercase">Excelencia y Trazabilidad en Salmón Premium</p>
+        <hr class="w-25 mx-auto bg-light my-4">
+        <small class="opacity-75 tracking-widest">IMPORTACIÓN DIRECTA DESDE LOS FIORDOS CHILENOS | TLC MÉXICO-CHILE</small>
     </div>
 </header>
 
-<main class="container my-5 py-5">
-    <div class="row g-4">
-        <div class="col-md-7 pe-lg-5">
-            <h2 class="section-title text-start">Justificación del Proyecto</h2>
-            <p class="lead fw-light">Suministro estratégico para el sector HORECA nacional.</p>
-            <p><strong>Australis Select México</strong> surge de la necesidad de abastecer al mercado gourmet mexicano con Salmón del Atlántico de alta frescura. Aprovechando el <strong>Tratado de Libre Comercio México-Chile</strong>, nuestra empresa elimina los costos arancelarios (0%) para ofrecer un producto premium con precios competitivos, optimizando la cadena de suministro a través de logística aérea de última generación.</p>
-            
-            <div class="mt-4 p-4 border-start border-4 border-info bg-light">
-                <h5 class="font-titles">Nuestra Hipótesis</h5>
-                <p class="m-0 italic">"La integración de un canal de importación directa reduce la brecha de frescura en un 40% respecto a distribuidores tradicionales, garantizando un producto 'Grade A' en la mesa del consumidor final."</p>
-            </div>
-        </div>
-        
-        <div class="col-md-5">
-            <div class="info-card">
-                <div class="icon-box text-center"><i class="fas fa-ship"></i></div>
-                <h4 class="text-center">Modelo de Negocio</h4>
-                <p class="small">Operamos como <strong>Comercializadora Importadora Especializada</strong>. Nuestro valor agregado reside en la gestión del riesgo cambiario, el despacho aduanero expedito y la logística 'last-mile' bajo temperatura controlada.</p>
-                <ul class="list-unstyled mt-3 small">
-                    <li><i class="fas fa-check text-success me-2"></i> Trámite Aduanal 0% Arancel</li>
-                    <li><i class="fas fa-check text-success me-2"></i> Inspección Sanitaria (SENASICA)</li>
-                    <li><i class="fas fa-check text-success me-2"></i> Distribución Prime</li>
+<section class="container my-5 py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+            <div class="model-card text-center">
+                <div class="model-icon">
+                    <i class="fas fa-ship"></i>
+                </div>
+                <h2 class="mb-4">Modelo de Negocio</h2>
+                <p class="text-muted mb-4">
+                    Operamos como <strong>Comercializadora Importadora Especializada</strong>. 
+                    Nuestro valor agregado reside en la gestión del riesgo cambiario, el despacho aduanero expedito 
+                    y la logística 'last-mile' bajo temperatura controlada.
+                </p>
+                <ul class="list-unstyled check-list d-inline-block text-start">
+                    <li><i class="fas fa-check"></i> Trámite Aduanal 0% Arancel</li>
+                    <li><i class="fas fa-check"></i> Inspección Sanitaria (SENASICA)</li>
+                    <li><i class="fas fa-check"></i> Distribución Prime</li>
                 </ul>
             </div>
         </div>
     </div>
-</main>
+</section>
 
 <footer>
     <div class="container text-center">
